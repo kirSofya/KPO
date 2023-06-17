@@ -20,9 +20,10 @@ public class studentRepository {
     public void save(students student) throws NotFoundException {
         final int studentId = STUDENT_ID_HOLDER.incrementAndGet();
         STUDENT_REPOSITORY_MAP.put(studentId, student);
-        STUDENT_REPOSITORY_MAP.put(student.getStudent_name(), student);
-        STUDENT_REPOSITORY_MAP.put(student.getAge(), student);
-        STUDENT_REPOSITORY_MAP.put(student.getSpecialization(), student);
+    }
+
+    public Integer findById(Long studentId) {
+        return 1; //!!!
     }
 
     // Все студенты
