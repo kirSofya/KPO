@@ -27,25 +27,6 @@ public class studentController {
     }
 
     // Добавить студента
-    /*@PostMapping("POST /students")
-    public students createNote(@RequestBody students student) {
-        return studentRepository.save(student);
-    }*/
-
-    // Получить оценку по id
-    @GetMapping("GET /grades /{studentId}")
-    public grades getNoteById(@PathVariable(value = "studentId") Long studentId) throws NotFoundException {
-        return gradeRepository.findById(studentId)
-                .orElseThrow(() -> new NotFoundException(studentId));
-    }
-
-    // Выставить оценку
-    @PostMapping("POST /grades")
-    public grades createNote(@RequestBody grades grade) {
-        return gradeRepository.save(grade);
-    }
-
-    // Добавить студента
     @PutMapping("/students/{studentId}")
     public students updateNote(@PathVariable(value = "studentId") Long studentId,
                                @RequestBody students details) throws NotFoundException {
@@ -59,5 +40,18 @@ public class studentController {
 
         students updatedStudent = studentRepository.save(student);
         return updatedStudent;
+    }
+
+    // Получить оценку по id
+    @GetMapping("GET /grades /{studentId}")
+    public grades getNoteById(@PathVariable(value = "studentId") Long studentId) throws NotFoundException {
+        return gradeRepository.findById(studentId)
+                .orElseThrow(() -> new NotFoundException(studentId));
+    }
+
+    // Выставить оценку
+    @PostMapping("POST /grades")
+    public grades createNote(@RequestBody grades grade) {
+        return gradeRepository.save(grade);
     }
 }
