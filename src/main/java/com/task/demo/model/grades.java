@@ -20,11 +20,11 @@ public class grades {
     @NotBlank
     private String grade;
 
-    public students(){
+    public grades(){
         super();
     }
 
-    public students(Long id, String student_name, String specialization, String subject, String grade) {
+    public grades(Long id, String student_name, String specialization, String subject, String grade) {
         super();
         this.id = id;
         this.student_name = student_name;
